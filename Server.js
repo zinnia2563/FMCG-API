@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./Config/Db");
 const handshakeRoutes = require("./Router/HandshakeRouter")
+const OrderRoutes = require("./Router/OrderRouter");
 
 dotenv.config();
 connectDB()
@@ -15,6 +16,7 @@ app.get("/",(req,res) =>{
 })
 
 app.use("/api/v1/handshake",handshakeRoutes);
+app.use("/api/v1/order",OrderRoutes);
 
 const port = process.env.PORT;
 app.listen(port, ()=>{

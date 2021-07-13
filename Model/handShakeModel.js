@@ -5,10 +5,6 @@ const handshakeSchema = new mongoose.Schema(
         deviceid: {
             type: String
         },
-        mobilenumber: {
-            type: String,
-            unique: true,
-        },
         fcmtoken: {
             type: String
         },
@@ -20,9 +16,11 @@ const handshakeSchema = new mongoose.Schema(
         },
         runningversion: {
           type: String,
+          default: "V1",
         },
         force: {
           type: Boolean,
+          default: false,
         }
     },
 

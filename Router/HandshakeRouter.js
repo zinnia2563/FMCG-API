@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const {createData} = require("../Controller/handShakeController")
+const {createData, getData} = require("../Controller/handShakeController")
 
-router.route("/").post(createData);
+router.route("/").post(createData).get(getData);
 
 module.exports = router;

@@ -2,19 +2,13 @@ const asyncHandler = require('express-async-handler');
 
 const Handshake = require("../Model/handShakeModel");
 
-const getallUser = asyncHandler(async(req,res)=>{
-    res.send("i will not work now")
-})
 
 const createData = asyncHandler(async(req,res) => {
   const handshake = new Handshake({
       deviceid: req.body.deviceid,
-      mobilenumber: req.body.mobilenumber,
       fcmtoken: req.body.fcmtoken,
       latitude: req.body.latitude,
       longitude: req.body.longitude,
-      runningversion: req.body.runningversion,
-      force: req.body.force,
   });
   try {
       const createdData = await handshake.save();
@@ -27,6 +21,21 @@ const createData = asyncHandler(async(req,res) => {
   }   
 })
 
+const getData = asyncHandler(async(req,res)=>{
+    try {
+        const result = await Handshake.find();
+        res.json({
+            message: "data get succesfully",
+            data: result
+        });
+
+    } catch (error) {
+        
+    }
+})
+
+
 module.exports = {
    createData,
+   getData,
 }
