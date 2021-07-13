@@ -4,4 +4,4 @@ const {createData, getData} = require("../Controller/handShakeController")
 
 router.route("/").post(createData).get(getData);
 
-module.exports = router;
+module.exports =  router;

@@ -38,4 +38,4 @@ const getData = asyncHandler(async(req,res)=>{
 module.exports = {
    createData,
    getData,
-}
+} 
