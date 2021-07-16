@@ -15,8 +15,8 @@ app.get("/",(req,res) =>{
     res.send("ok");
 })
 
-app.use("/api/v1/handshake",handshakeRoutes);
-app.use("/api/v1/order",OrderRoutes);
+app.use("/api/v1/handshake",handshakeRoutes); // it will use for device info in handshake routes
+app.use("/api/v1/order",OrderRoutes);// it will use for order_by_image routes
 
 const port = process.env.PORT;
 app.listen(port, ()=>{
