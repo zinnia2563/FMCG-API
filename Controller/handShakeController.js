@@ -23,7 +23,8 @@ const createData = asyncHandler(async(req,res) => {
 
 const getData = asyncHandler(async(req,res)=>{
     try {
-        const result = await Handshake.find();
+        //it will return just last added item only one item as limit is 1
+        const result = await Handshake.find().sort({_id:1}).limit(1);;
         res.json({
             message: "data get succesfully",
             data: result
