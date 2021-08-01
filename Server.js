@@ -5,6 +5,7 @@ const cors = require("cors");
 const connectDB = require("./Config/Db");
 const handshakeRoutes = require("./Router/HandshakeRouter")
 const OrderRoutes = require("./Router/OrderRouter");
+const UserRoutes = require("./Router/UserRoutes")
 const CashboxRoutes = require("./Router/CashboxRouter")
 const DuePayandReceiveRoutes = require("./Router/DuePayandReceiveRouter")
 const ExpenseRoutes= require("./Router/ExpenseRouter")
@@ -19,8 +20,9 @@ app.get("/",(req,res) =>{
     res.send("ok");
 })
 
-app.use("/api/v1/handshake",handshakeRoutes); // it will use for device info in handshake routes
+app.use("/api/v1/handshake",handshakeRoutes); // it will use for device info in handshake route
 app.use("/api/v1/order",OrderRoutes);// it will use for order_by_image routes
+app.use("/api/v1/users",UserRoutes);
 app.use("/api/v1/cashbox",CashboxRoutes)
 app.use("/api/v1/duepayandreceive",DuePayandReceiveRoutes);
 app.use("/api/v1/expense",ExpenseRoutes);
