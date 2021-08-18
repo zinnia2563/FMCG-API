@@ -4,6 +4,7 @@ const Handshake = require("../Model/handShakeModel");
 
 
 const createData = asyncHandler(async(req,res) => {
+    console.log(req.body);
   const handshake = new Handshake({
       deviceid: req.body.deviceid,
       fcmtoken: req.body.fcmtoken,

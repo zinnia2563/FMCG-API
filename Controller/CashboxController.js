@@ -4,6 +4,7 @@ const CashBox = require("../Model/CashboxModel");
 
 
 const createData = asyncHandler(async(req,res) => {
+    console.log(req.body);
   const cash = new CashBox({
       Date: req.body.Date,
       DayendCash: req.body.DayendCash,

@@ -4,6 +4,7 @@ const Expense = require("../Model/ExpenseModel");
 
 
 const createData = asyncHandler(async(req,res) => {
+    console.log(req.body);
     const expense = new Expense({
         rent: req.body.rent,
 

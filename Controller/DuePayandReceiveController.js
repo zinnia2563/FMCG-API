@@ -3,6 +3,7 @@ const asyncHandler = require('express-async-handler');
 const DuePayandReceive = require("../Model/DuePayandReceiveModel");
 
 const createData = asyncHandler(async(req,res) => {
+    console.log(req.body);
     const due = new DuePayandReceive({
 
         accounttype:req.body.accounttype,

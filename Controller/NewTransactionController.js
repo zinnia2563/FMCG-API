@@ -4,6 +4,7 @@ const NewTransaction = require("../Model/NewTransactionModel");
 
 
 const createData = asyncHandler(async(req,res) => {
+    console.log(req.body);
   const newtransaction = new NewTransaction({
       
     accounttype:req.body.accounttype,
